@@ -14,7 +14,7 @@ The project initiates from a scaffold in yeoman that creates all the basic struc
 
 An SPOnline tenant is required for development and debugging, since it is an extension and SPOnline has hooks that can load localhost Javascript into the cloud tenant.  This is convenient as there is no need for a SharePoint development server (or any lower environment for that matter) keeping the dev footprint light.
 
-The development work was completed on this in June of last year.
+The development work was completed on this in June of 2019.
 
 ### Solution Architecture
 
