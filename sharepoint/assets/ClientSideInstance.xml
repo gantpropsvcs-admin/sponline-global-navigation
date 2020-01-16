@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="Global Navigation"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="af9f6ef1-f07b-4208-9d68-1569813924c4"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}"
+        ListTemplateId="100"
+        WebTemplateId="GROUP#0"
+        Sequence="10" >
+    </ClientSideComponentInstance>
+</Elements>

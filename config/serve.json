@@ -1,0 +1,29 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://fwhqe.sharepoint.com/sites/subhub/SitePages/home.aspx",
+      "customActions": {
+        "af9f6ef1-f07b-4208-9d68-1569813924c4": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    },
+    "subHubHeaderFooter": {
+      "pageUrl": "https://fwhqe.sharepoint.com/sites/subhub/SitePages/home.aspx",
+      "customActions": {
+        "af9f6ef1-f07b-4208-9d68-1569813924c4": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {
+            "testMessage": "Test message"
+          }
+        }
+      }
+    }
+  }
+}
