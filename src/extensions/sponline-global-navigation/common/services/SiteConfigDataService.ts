@@ -3,7 +3,7 @@ import IConfigData from '../model/IConfigData';
 export default class SiteConfigDataServices {
     // Get the header/footer data from the specifed URL
     public static get (site : any): Promise<IConfigData | string> {
-        let url = site + "/_api/lists/SubHubConfig/items";
+        let url = site + "/_api/lists/SPOnlineConfig/items";
 
         return new Promise <IConfigData | string>((resolve, reject) => {
             fetch(url, {

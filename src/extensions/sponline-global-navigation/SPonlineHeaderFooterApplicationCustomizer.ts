@@ -16,21 +16,21 @@ import IHeaderFooterData from './common/model/IHeaderFooterData';
 import IConfigData from './common/model/IConfigData';
 import ComponentManager from './common/components/ComponentManager';
 
-const LOG_SOURCE: string = 'SubHubHeaderFooterApplicationCustomizer';
+const LOG_SOURCE: string = 'SPOnlineHeaderFooterApplicationCustomizer';
 const HUB_KEY : string = "Hub";
 
 /**
  * If your command set uses the ClientSideComponentProperties JSON input,
  * it will be deserialized into the BaseExtension.properties object.
  */
-export interface ISubHubHeaderFooterApplicationCustomizerProperties {
+export interface ISPOnlineHeaderFooterApplicationCustomizerProperties {
     Top: string;
     Bottom: string;
 }
 
 /** A Custom Action which can be run during execution of a Client Side Application */
-export default class SubHubHeaderFooterApplicationCustomizer
-    extends BaseApplicationCustomizer<ISubHubHeaderFooterApplicationCustomizerProperties> {
+export default class SPOnlineHeaderFooterApplicationCustomizer
+    extends BaseApplicationCustomizer<ISPOnlineHeaderFooterApplicationCustomizerProperties> {
 
         public static navigateToLink(link:String, title:String, newWindow:Boolean) {
             if (newWindow) {
@@ -57,10 +57,10 @@ export default class SubHubHeaderFooterApplicationCustomizer
         private _bottomPlaceholder: PlaceholderContent | undefined;
         private _cachedNavItems: IHeaderFooterData;
         private _rendered = false;
-        private static NAV_ITEMS_KEY: string = "subhubNavItems";
-        private static NAV_ITEMS_EXPIRED: string = "subhubNavItemsExpiry";
-        private static EXPIRE_DURATION: string = "subhubExpireDuration";
-        private static NAV_USER:string = "subhubNavUser";
+        private static NAV_ITEMS_KEY: string = "SPOnlineNavItems";
+        private static NAV_ITEMS_EXPIRED: string = "SPOnlineNavItemsExpiry";
+        private static EXPIRE_DURATION: string = "SPOnlineExpireDuration";
+        private static NAV_USER:string = "SPOnlineNavUser";
 
         private RenderNavigation() :void {
             // inject font override at bottom
@@ -72,7 +72,7 @@ export default class SubHubHeaderFooterApplicationCustomizer
 
             shStyleSheet.setAttribute("typeref", "text/css");
             shStyleSheet.setAttribute("rel", "stylesheet");
-            shStyleSheet.setAttribute("href", "/sites/subhub/siteassets/styles/subhub.css");
+            shStyleSheet.setAttribute("href", "/sites/SPOnline/siteassets/styles/SPOnline.css");
 
             document.head.appendChild(shStyleSheet);
 
@@ -112,8 +112,8 @@ export default class SubHubHeaderFooterApplicationCustomizer
                     console.log("search was clicked");
                     (window as any).fwhtrk.page.link = "Top nav - search";
                     (window as any)._satellite.track('linkClick');
-                    //window.location.href = "/sites/subhub/sitepages/search.aspx?q=" + query; 
-                    window.location.href = "https://fwh.sharepoint.com/sites/subhub/_layouts/15/search.aspx?q=" + query;
+                    //window.location.href = "/sites/SPOnline/sitepages/search.aspx?q=" + query; 
+                    window.location.href = "https://fwh.sharepoint.com/sites/SPOnline/_layouts/15/search.aspx?q=" + query;
                 } else {
                     alert("No search term was entered");
                 }
@@ -127,8 +127,8 @@ export default class SubHubHeaderFooterApplicationCustomizer
                         console.log("search was clicked");
                         (window as any).fwhtrk.page.link = "Top nav - search";
                         (window as any)._satellite.track('linkClick');
-                        //window.location.href = "/sites/subhub/sitepages/search.aspx?q=" + query; 
-                        window.location.href = "https://fwh.sharepoint.com/sites/subhub/_layouts/15/search.aspx?q=" + query;
+                        //window.location.href = "/sites/SPOnline/sitepages/search.aspx?q=" + query; 
+                        window.location.href = "https://fwh.sharepoint.com/sites/SPOnline/_layouts/15/search.aspx?q=" + query;
                     } else {
                         alert("No search term was entered");
                     }
@@ -144,10 +144,10 @@ export default class SubHubHeaderFooterApplicationCustomizer
                 let teamsitesdd = dropdowns[dropdowns.length-2];
 
                 let searchlink = document.createElement("a");
-                //searchlink.href = "/sites/subhub/sitepages/search.aspx";
+                //searchlink.href = "/sites/SPOnline/sitepages/search.aspx";
                 searchlink.textContent = "Search";
                 searchlink.addEventListener("click", function() {
-                    SubHubHeaderFooterApplicationCustomizer.navigateToLink("https://fwh.sharepoint.com/sites/subhub/_layouts/15/search.aspx", "search", false);
+                    SPOnlineHeaderFooterApplicationCustomizer.navigateToLink("https://fwh.sharepoint.com/sites/SPOnline/_layouts/15/search.aspx", "search", false);
                  });
 
                 let searchbutton = document.createElement("div");
@@ -155,10 +155,10 @@ export default class SubHubHeaderFooterApplicationCustomizer
                 searchbutton.appendChild(searchlink);
 
                 let teamsiteslink = document.createElement("a");
-                //teamsiteslink.href = "/sites/subhub/sitepages/my-team-sites.aspx";
+                //teamsiteslink.href = "/sites/SPOnline/sitepages/my-team-sites.aspx";
                 teamsiteslink.textContent = "Team Sites";
                 teamsiteslink.addEventListener("click", function(e) {
-                    SubHubHeaderFooterApplicationCustomizer.navigateToLink("/sites/subhub/sitepages/my-team-sites.aspx", (e.currentTarget as any).innerText, false);
+                    SPOnlineHeaderFooterApplicationCustomizer.navigateToLink("/sites/SPOnline/sitepages/my-team-sites.aspx", (e.currentTarget as any).innerText, false);
                  });
                 
                 let teamsitesbutton = document.createElement("div");
@@ -201,9 +201,9 @@ export default class SubHubHeaderFooterApplicationCustomizer
                 spfxContext: this.context
             });
 
-            let cachedNav = sessionStorage.getItem(SubHubHeaderFooterApplicationCustomizer.NAV_ITEMS_KEY);
-            let cachedNavExpiry = sessionStorage.getItem(SubHubHeaderFooterApplicationCustomizer.NAV_ITEMS_EXPIRED);
-            let cachedNavUser = sessionStorage.getItem(SubHubHeaderFooterApplicationCustomizer.NAV_USER);
+            let cachedNav = sessionStorage.getItem(SPOnlineHeaderFooterApplicationCustomizer.NAV_ITEMS_KEY);
+            let cachedNavExpiry = sessionStorage.getItem(SPOnlineHeaderFooterApplicationCustomizer.NAV_ITEMS_EXPIRED);
+            let cachedNavUser = sessionStorage.getItem(SPOnlineHeaderFooterApplicationCustomizer.NAV_USER);
 
             let curUser = this.context.pageContext.user.loginName;
             
@@ -237,7 +237,7 @@ export default class SubHubHeaderFooterApplicationCustomizer
                             let navorder = configdata.siteconfig.filter(c => { return c.configkey === "NavOrder"; })[0].configvalue;
                             let cachedExpireDuration = Number(configdata.siteconfig.filter(c => { return c.configkey === "CacheExpireDuration"; })[0].configvalue);
 
-                            const url = hs.url + "/_api/Lists/GetByTitle('SubHub%20Navigation')/items?$select=" + navfields + "&$expand=" + navexpand + "&$orderby=" + navorder;
+                            const url = hs.url + "/_api/Lists/GetByTitle('SPOnline%20Navigation')/items?$select=" + navfields + "&$expand=" + navexpand + "&$orderby=" + navorder;
                             
                             // Read JSON containing the header and footer data
                             HeaderFooterDataService.get(url)
@@ -292,12 +292,12 @@ export default class SubHubHeaderFooterApplicationCustomizer
                                             }]
                                         });
 
-                                        sessionStorage.setItem(SubHubHeaderFooterApplicationCustomizer.NAV_USER,curUser);
-                                        sessionStorage.setItem(SubHubHeaderFooterApplicationCustomizer.NAV_ITEMS_KEY, JSON.stringify(data));
+                                        sessionStorage.setItem(SPOnlineHeaderFooterApplicationCustomizer.NAV_USER,curUser);
+                                        sessionStorage.setItem(SPOnlineHeaderFooterApplicationCustomizer.NAV_ITEMS_KEY, JSON.stringify(data));
 
                                         let expirydate = new Date();
                                         expirydate.setMinutes(expirydate.getMinutes() + cachedExpireDuration);
-                                        sessionStorage.setItem(SubHubHeaderFooterApplicationCustomizer.NAV_ITEMS_EXPIRED, expirydate.toISOString());
+                                        sessionStorage.setItem(SPOnlineHeaderFooterApplicationCustomizer.NAV_ITEMS_EXPIRED, expirydate.toISOString());
 
                                         //this.RenderNavigation(data);
                                         this._cachedNavItems = data;
@@ -309,7 +309,7 @@ export default class SubHubHeaderFooterApplicationCustomizer
                                     resolve();
                             })
                             .catch ((error: string) => {
-                                console.log('Error in SubHubHeaderFooterApplicationCustomizer: ${error}');
+                                console.log('Error in SPOnlineHeaderFooterApplicationCustomizer: ${error}');
                                 reject();
                             });
                         });

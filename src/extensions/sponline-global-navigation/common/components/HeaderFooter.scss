@@ -150,7 +150,7 @@
     font-family: $font-family;
   }
 
-  .subHubLogo {
+  .SPOnlineLogo {
       float: left;
   }
   
@@ -342,7 +342,7 @@
       }
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (max-width: 1200px) {
-    .subHubLogo {
+    .SPOnlineLogo {
       display: inline-block;
     }   
 
@@ -384,7 +384,7 @@
   }
 
   @media only screen and (max-width: 1024px) {
-    /* .subHubLogo {
+    /* .SPOnlineLogo {
       display: none;
     } */    
 
@@ -404,7 +404,7 @@
 
 
   @media only screen and (max-width: 992px) {
-/*     .subHubLogo {
+/*     .SPOnlineLogo {
       display: none;
     }  */
 
@@ -426,7 +426,7 @@
   }
 
   @media only screen and (max-width: 768px) {
- /*    .subHubLogo {
+ /*    .SPOnlineLogo {
       display: none;
     } */
 

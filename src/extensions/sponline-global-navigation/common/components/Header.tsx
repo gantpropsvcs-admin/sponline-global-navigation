@@ -100,7 +100,7 @@ export class Header extends React.Component<IHeaderProps, {}> {
     public logoClick(e) {
         e.preventDefault();
         
-        window.open("/sites/subhub", "_self");
+        window.open("/sites/SPOnline", "_self");
     }
 
     public render(): JSX.Element {
@@ -123,7 +123,7 @@ export class Header extends React.Component<IHeaderProps, {}> {
                     <i className="ms-Icon ms-Icon--Cancel" title="CloseGlobalNavButton" aria-hidden="true"></i>
                     <div className="navbar">
                         <div className="sh_logo dropdown">
-                            <a href="#" onClick={this.logoClick}><img className="subHubLogo" role="presentation" alt="Site logo" src="/sites/subhub/SiteAssets/subhublogo.png" /></a>
+                            <a href="#" onClick={this.logoClick}><img className="SPOnlineLogo" role="presentation" alt="Site logo" src="/sites/SPOnline/SiteAssets/SPOnlinelogo.png" /></a>
                         </div>
                     { links.map( (c, index) => {
                             var lastclass = (links.length-1 == index) ? "dropdown lastdropdown" : "dropdown"

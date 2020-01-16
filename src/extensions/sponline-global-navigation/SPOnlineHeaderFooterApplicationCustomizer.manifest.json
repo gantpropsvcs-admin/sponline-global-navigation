@@ -2,7 +2,7 @@
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-extension-manifest.schema.json",
 
   "id": "af9f6ef1-f07b-4208-9d68-1569813924c4",
-  "alias": "SubHubHeaderFooterApplicationCustomizer",
+  "alias": "SPOnlineHeaderFooterApplicationCustomizer",
   "componentType": "Extension",
   "extensionType": "ApplicationCustomizer",
 

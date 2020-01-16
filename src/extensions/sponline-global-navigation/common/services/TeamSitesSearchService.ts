@@ -217,7 +217,7 @@ export default class HeaderFooterDataService {
                     
 
                     if (headeritems.length > MAXLINKS) {
-                        headerLinks[curgroupidx-1].children[curcolidx-1].children.push(this.NewNavItem("My Team Sites","/sites/subhub/sitepages/my-team-sites.aspx","Top",true,0,curcolidx,1,0,false,false,[]));
+                        headerLinks[curgroupidx-1].children[curcolidx-1].children.push(this.NewNavItem("My Team Sites","/sites/SPOnline/sitepages/my-team-sites.aspx","Top",true,0,curcolidx,1,0,false,false,[]));
                     } 
                 } else {
                     curcolidx = headerLinks[curgroupidx-1].children.push(this.NewNavItem("Column0","none","Top"));

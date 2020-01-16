@@ -4,7 +4,7 @@
   "https": true,
   "serveConfigurations": {
     "default": {
-      "pageUrl": "https://fwhqe.sharepoint.com/sites/subhub/SitePages/home.aspx",
+      "pageUrl": "https://fwhqe.sharepoint.com/sites/SPOnline/SitePages/home.aspx",
       "customActions": {
         "af9f6ef1-f07b-4208-9d68-1569813924c4": {
           "location": "ClientSideExtension.ApplicationCustomizer",
@@ -14,8 +14,8 @@
         }
       }
     },
-    "subHubHeaderFooter": {
-      "pageUrl": "https://fwhqe.sharepoint.com/sites/subhub/SitePages/home.aspx",
+    "SPOnlineHeaderFooter": {
+      "pageUrl": "https://fwhqe.sharepoint.com/sites/SPOnline/SitePages/home.aspx",
       "customActions": {
         "af9f6ef1-f07b-4208-9d68-1569813924c4": {
           "location": "ClientSideExtension.ApplicationCustomizer",

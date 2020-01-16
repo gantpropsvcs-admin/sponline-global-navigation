@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "SubHub Global Header Footer",
+    "name": "SPOnline Global Header Footer",
     "id": "0484583f-17d7-47e1-9558-e9637d9ade5c",
     "version": "1.0.2.0",
     "includeClientSideAssets": true,
     "features": [
       {
-        "title": "SubHub Global Header Footer",
+        "title": "SPOnline Global Header Footer",
         "description": "Deploys a custom action with ClientSideComponentId association",
         "id": "14ad533c-0ebc-494f-bdb8-6f405c402264",
         "version": "1.0.2.0",
