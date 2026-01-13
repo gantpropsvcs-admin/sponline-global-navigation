@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@microsoft/decorators": "1.8.1",
-    "@microsoft/generator-sharepoint": "^1.8.1",
+    "@microsoft/generator-sharepoint": "^1.21.1",
     "@microsoft/sp-application-base": "1.8.1",
     "@microsoft/sp-core-library": "1.8.1",
     "@microsoft/sp-dialog": "1.8.1",
